@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:sign="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context=".view.MainActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/layoutViews"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="10dp"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp">
+
+        <com.kyanogen.signatureview.SignatureView
+
+            android:id="@+id/signature_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            sign:backgroundColor="#ffffff"
+            sign:enableSignature="true"
+            sign:penColor="#000000"
+            sign:penSize="5dp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layoutViews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/penSize"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/green_hard"
+                android:contentDescription="@string/pen_size"
+                android:max="50"
+                android:progress="20"
+                android:progressBackgroundTint="@color/green_hard"
+                android:progressTint="@color/green_hard"
+                android:thumbTint="@color/green_hard" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtPenSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/_20_dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="12sp"
+                android:weightSum="3">
+
+
+                <ImageView
+                    android:id="@+id/btnErase"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_erase" />
+
+                <ImageView
+                    android:id="@+id/btnDraw"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="3dp"
+                    android:src="@drawable/ic_draw" />
+
+                <ImageView
+                    android:id="@+id/btnPicker"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_picker" />
+
+
+                <ImageView
+                    android:id="@+id/btnDelete"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_delete" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

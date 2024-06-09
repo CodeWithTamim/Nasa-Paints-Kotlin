@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Nasa Paints</string>
+    <string name="pen_size">Pen size</string>
+    <string name="_20_dp">20 dp</string>
+</resources>
